@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #120202;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui;
+}
+
+/* Robot body */
+.robot {
+  width: 300px;
+  height: 420px;
+  background: #1a0000;
+  border-radius: 26px;
+  position: relative;
+  box-shadow: 0 0 30px rgba(255, 60, 60, 0.5);
+  user-select: none;
+}
+
+/* Face */
+.face {
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  text-align: center;
+}
+
+.eyes {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.eye {
+  width: 26px;
+  height: 26px;
+  background: #ff3b3b;
+  border-radius: 50%;
+}
+
+.mouth {
+  width: 60px;
+  height: 10px;
+  background: #ff3b3b;
+  border-radius: 8px;
+  margin: 25px auto 0;
+}
+
+/* Hands */
+.hand {
+  width: 34px;
+  height: 110px;
+  background: #ff6b6b;
+  position: absolute;
+  top: 230px;
+  border-radius: 20px;
+  opacity: 0;
+}
+
+.hand.left { left: -15px; }
+.hand.right { right: -15px; }
+
+/* Show hands only while speaking */
+.speaking .hand {
+  opacity: 1;
+  animation: wave 0.6s infinite alternate;
+}
+
+@keyframes wave {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(12deg); }
+}
+
+/* Status text */
+.status {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #ffb3b3;
+  font-size: 14px;
+}
